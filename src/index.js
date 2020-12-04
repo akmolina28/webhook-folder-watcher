@@ -11,6 +11,10 @@ const watcher = chokidar.watch('.', {
   usePolling: use_polling
 });
 
+console.log('Starting watch for ' + watch_folder);
+console.log('- webhook_url = ' + webhook_url);
+console.log('- use_polling = ' + use_polling);
+
 watcher.on('add', (path) => {
   console.log(`file added: ${path}`);
   axios

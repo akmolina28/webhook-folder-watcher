@@ -26,5 +26,6 @@ watcher.on('add', (path) => {
     })
     .catch(error => {
       console.error(error)
-    })
+    });
+  watcher.unwatch(path);
 });

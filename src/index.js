@@ -5,7 +5,7 @@ const watch_folder = process.env.WATCH_FOLDER;
 const webhook_url = process.env.WEBHOOK_URL;
 const use_polling = process.env.WATCH_USE_POLLING || false;
 
-const watcher = chokidar.watch('.', { 
+const watcher = chokidar.watch(["./**/*.jpg", "./**/*.jpeg"], { 
   ignoreInitial: true,
   cwd: watch_folder,
   usePolling: use_polling

@@ -33,7 +33,7 @@ watcher.on('add', (path) => {
   
   var form = new FormData();
   form.append('image_file', fs.readFileSync(watch_folder + '/' + path), {
-    filename: path,
+    filename: imagePath.replace(/\//g,"_"),
     contentType: 'image/jpeg'
   });
 

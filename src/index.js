@@ -29,11 +29,11 @@ const watcher = chokidar.watch(["./**/*.jpg", "./**/*.jpeg"], {
 // bind to events that trigger after a file is added
 watcher.on('add', (path) => {
   let imagePath = watch_folder + '/' + path;
-  console.log(`file added: ${path}`);
+  console.log(`file added: ${imagePath}`);
   
   var form = new FormData();
   form.append('image_file', fs.readFileSync(watch_folder + '/' + path), {
-    filename: path,
+    filename: imagePath.replace(/\//g,"_"),
     contentType: 'image/jpeg'
   });
 
